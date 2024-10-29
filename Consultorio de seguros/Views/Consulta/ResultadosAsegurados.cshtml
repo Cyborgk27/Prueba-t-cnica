@@ -1,0 +1,38 @@
+﻿@model List<Consultorio_de_seguros.Models.Asegurado>
+
+@{
+    ViewData["Title"] = "Resultados de Asegurados";
+}
+
+<h1>Resultados de Asegurados</h1>
+
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-warning" role="alert">
+        No se encontraron asegurados.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Cédula</th>
+                    <th>Nombre del Asegurado</th>
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var asegurado in Model)
+                {
+                    <tr>
+                        <td>@asegurado.Cedula</td>
+                        <td>@asegurado.Nombre</td>
+                        <td>@asegurado.Edad</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

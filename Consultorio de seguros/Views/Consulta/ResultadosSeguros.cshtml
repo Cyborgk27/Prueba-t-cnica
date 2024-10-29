@@ -1,0 +1,38 @@
+﻿@model List<Consultorio_de_seguros.Models.Seguro>
+
+@{
+    ViewBag.Title = "Resultados de Seguros";
+}
+
+<h2>Resultados de Seguros</h2>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Código Seguro</th>
+                <th>Nombre del Seguro</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var seguro in Model)
+            {
+                <tr>
+                    <td>@seguro.SeguroId</td>
+                    <td>@seguro.CodigoSeguro</td>
+                    <td>@seguro.Nombre</td>
+                    <td>@seguro.Prima</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">No se encontraron seguros asociados a esta cédula.</div>
+}
+
+<a href="@Url.Action("Index", "Consulta")" class="btn btn-secondary">Volver</a>

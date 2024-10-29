@@ -1,0 +1,41 @@
+﻿@model Consultorio_de_seguros.Models.Asegurado
+
+<h1>Editar Asegurado</h1>
+
+<form asp-action="Editar" method="post" novalidate>
+    <input type="hidden" asp-for="AseguradoId" />
+
+    <div class="form-group">
+        <label asp-for="Cedula"></label>
+        <input asp-for="Cedula" class="form-control" />
+        <span asp-validation-for="Cedula" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Telefono"></label>
+        <input asp-for="Telefono" class="form-control" />
+        <span asp-validation-for="Telefono" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Edad"></label>
+        <input asp-for="Edad" class="form-control" />
+        <span asp-validation-for="Edad" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

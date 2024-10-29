@@ -1,0 +1,12 @@
+﻿@model Consultorio_de_seguros.Models.Asegurado
+
+<h1>Eliminar Asegurado</h1>
+
+<p>¿Está seguro de que desea eliminar al asegurado @Model.Nombre?</p>
+
+<form asp-action="Eliminar" method="post">
+    <input type="hidden" asp-for="AseguradoId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Cancelar</a>

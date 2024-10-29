@@ -1,0 +1,47 @@
+﻿@model Consultorio_de_seguros.Models.Seguro
+
+@{
+    ViewData["Title"] = "Editar Seguro";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Editar" method="post" novalidate>
+    <input type="hidden" asp-for="SeguroId" />
+
+    <div class="form-group">
+        <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CodigoSeguro" class="control-label"></label>
+        <input asp-for="CodigoSeguro" class="form-control" />
+        <span asp-validation-for="CodigoSeguro" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SumaAsegurada" class="control-label"></label>
+        <input asp-for="SumaAsegurada" class="form-control" />
+        <span asp-validation-for="SumaAsegurada" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prima" class="control-label"></label>
+        <input asp-for="Prima" class="form-control" />
+        <span asp-validation-for="Prima" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Actualizar" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Volver a la lista de Seguros</a>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

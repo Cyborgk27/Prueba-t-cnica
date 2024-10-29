@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Consultorio_de_seguros.Models.AsignacionSeguroAsegurado>
+
+<h1>Asignaciones de Seguros</h1>
+
+<a asp-action="Create" class="btn btn-primary">Agregar Asignación</a>
+<a asp-action="MassiveLoad" class="btn btn-secondary">Agregar nuevos asegurados</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Asegurado</th>
+            <th>Seguro</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var asignacion in Model)
+        {
+            <tr>
+                <td>@asignacion.Asegurado?.Nombre</td>
+                <td>@asignacion.Seguro?.Nombre</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@asignacion.AsignacionId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

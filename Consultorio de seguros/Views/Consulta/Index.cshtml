@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Consulta de Seguros";
+}
+
+<h2>Consulta de Seguros</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<form asp-action="ConsultarAsignaciones" method="get">
+    <div class="form-group">
+        <label for="criterioBusqueda">Ingrese número de cédula o código de seguro:</label>
+        <input type="text" class="form-control" id="criterioBusqueda" name="criterioBusqueda" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Consultar</button>
+</form>

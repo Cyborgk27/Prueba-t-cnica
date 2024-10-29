@@ -1,0 +1,25 @@
+﻿@model Consultorio_de_seguros.Models.AsignacionSeguroAsegurado
+
+<h1>Agregar Asignación de Seguro</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="AseguradoId">Asegurado</label>
+        <select asp-for="AseguradoId" class="form-control" asp-items="@(new SelectList(ViewBag.Asegurados, "AseguradoId", "Nombre"))">
+            <option value="">Seleccione un asegurado</option>
+        </select>
+        <span asp-validation-for="AseguradoId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SeguroId">Seguro</label>
+        <select asp-for="SeguroId" class="form-control" asp-items="@(new SelectList(ViewBag.Seguros, "SeguroId", "Nombre"))">
+            <option value="">Seleccione un seguro</option>
+        </select>
+        <span asp-validation-for="SeguroId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

@@ -1,0 +1,45 @@
+﻿@model Consultorio_de_seguros.Models.Seguro
+
+@{
+    ViewData["Title"] = "Eliminar Seguro";
+}
+
+<h2>Eliminar Seguro</h2>
+
+<div>
+    <h4>Seguro</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CodigoSeguro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodigoSeguro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SumaAsegurada)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SumaAsegurada)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prima)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prima)
+        </dd>
+    </dl>
+
+    <h4>¿Estás seguro de que deseas eliminar este seguro?</h4>
+    <form asp-action="EliminarConfirmed" method="post">
+        <input type="hidden" asp-for="SeguroId" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

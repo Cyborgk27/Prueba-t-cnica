@@ -1,0 +1,12 @@
+﻿@model Consultorio_de_seguros.Models.AsignacionSeguroAsegurado
+
+<h1>Eliminar Asignación</h1>
+
+<p>¿Está seguro de que desea eliminar la asignación de seguro para el asegurado @Model.Asegurado?.Nombre?</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="AsignacionId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Cancelar</a>
